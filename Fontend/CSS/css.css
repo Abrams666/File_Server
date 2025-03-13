@@ -1,0 +1,84 @@
+:root {
+	--Blue: rgb(0, 130, 216);
+	--Gray: rgb(66, 66, 66);
+	--Dark-Gray: rgb(33, 33, 33);
+}
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	outline: none;
+	text-decoration: none;
+	list-style-type: none;
+	color: white;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+html {
+	width: 100vw;
+	height: auto;
+}
+body {
+	width: 100vw;
+	height: auto;
+	background-color: var(--Gray);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+footer {
+	width: 100vw;
+	height: 3vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+main {
+	width: 100vw;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+form {
+	width: 65%;
+	height: auto;
+	padding: 10%;
+	background-color: var(--Dark-Gray);
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+button {
+	width: 70%;
+	height: 30px;
+	border-radius: 1000px;
+	background-color: var(--Blue);
+	cursor: pointer;
+}
+.errText_cla {
+	color: red;
+}
+#login_mainId {
+	height: 97vh;
+}
+#login_formId p {
+	width: 100%;
+	text-align: center;
+}
+#login_formId input {
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid var(--Blue);
+	padding: 5px;
+	color: var(--Blue);
+	background-color: var(--Dark-Gray);
+	font-size: x-large;
+}

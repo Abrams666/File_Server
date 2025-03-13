@@ -41,8 +41,22 @@ app.get("/", (req, res) => {
 	res.end(login_temp);
 });
 
+app.get("/user", (req, res) => {
+	res.end(user_temp);
+});
 //request
-app.post("/logindata", (req, res) => {});
+app.post("/logindata", (req, res) => {
+	const data = req.body;
+
+	if (data.pwd.toString() === pwd.toString()) {
+		res.cookie("au4a83", data.pwd.toString(), { maxAge: 86400000 });
+		res.status(200);
+		res.redirect("/user");
+	} else {
+		res.status(403);
+		res.end();
+	}
+});
 
 //give css
 app.get("/css", (req, res) => {
