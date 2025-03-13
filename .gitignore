@@ -1,4 +1,4 @@
 node_modules/
 .vscode/
 Pre_Code/
-config.env/
+config.env
