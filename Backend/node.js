@@ -22,11 +22,37 @@ const port = process.env.PORT;
 const pwd = process.env.PASSWORD;
 
 //read file
-//const css = fs.readFileSync("./Template/css.css", "utf8");
+const login_temp = fs.readFileSync("../Fontend/HTML/Login.html", "utf8");
+const user_temp = fs.readFileSync("../Fontend/HTML/User.html", "utf8");
+const upload_temp = fs.readFileSync("../Fontend/HTML/Upload.html", "utf8");
+const get_file_temp = fs.readFileSync("../Fontend/HTML/Get_File.html", "utf8");
+
+const css = fs.readFileSync("../Fontend/CSS/css.css", "utf8");
+
+const jss = [
+	fs.readFileSync("../Fontend/JS/Login.js", "utf8"),
+	fs.readFileSync("../Fontend/JS/User.js", "utf8"),
+	fs.readFileSync("../Fontend/JS/Upload.js", "utf8"),
+	fs.readFileSync("../Fontend/JS/Get_File.js", "utf8"),
+];
 
 //give page
 app.get("/", (req, res) => {
-	res.end("Hello World!");
+	res.end(login_temp);
+});
+
+//request
+app.post("/logindata", (req, res) => {});
+
+//give css
+app.get("/css", (req, res) => {
+	res.end(css);
+});
+
+//give js
+app.get("/js/:id", (req, res) => {
+	const id = req.params.id;
+	res.end(jss[id]);
 });
 
 //start server
